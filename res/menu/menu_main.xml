@@ -4,7 +4,12 @@
     tools:context="com.bwisni.rings.MainActivity">
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="99"
         android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_reset"
+        android:orderInCategory="99"
+        android:title="Reset"
         app:showAsAction="never" />
 </menu>
