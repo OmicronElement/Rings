@@ -13,16 +13,17 @@
     tools:showIn="@layout/activity_main">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp">
 
             <GridLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -33,7 +34,7 @@
                     android:id="@+id/player"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="left|center_vertical"
-                    android:textSize="35dp" />
+                    android:textSize="25dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,6 +49,18 @@
                     android:layout_alignParentEnd="true"
                     android:layout_gravity="center" />
             </GridLayout>
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/scoresListView"
+                android:headerDividersEnabled="true" />
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -197,38 +210,48 @@
 
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Undo"
-                    android:id="@+id/undo"
-                    android:textSize="@dimen/buttonTextSize"
-                    android:height="@dimen/buttonHeight"
-                    android:width="@dimen/buttonWidth" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Space"
-                    android:id="@+id/button"
-                    android:visibility="invisible" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Next"
-                    android:id="@+id/next"
-                    android:textSize="@dimen/buttonTextSize"
-                    android:height="@dimen/buttonHeight"
-                    android:width="@dimen/buttonWidth" />
-            </TableRow>
         </TableLayout>
 
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+        </RelativeLayout>
+
     </LinearLayout>
+
+    <ImageButton
+        android:layout_width="@dimen/wideButtonWidth"
+        android:layout_height="wrap_content"
+        android:text="Undo"
+        android:id="@+id/undo"
+        android:textSize="@dimen/buttonTextSize"
+        android:height="@dimen/buttonHeight"
+        android:width="@dimen/wideButtonWidth"
+        android:src="@android:drawable/ic_menu_revert"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="@dimen/wideButtonWidth"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/next"
+        android:textSize="@dimen/buttonTextSize"
+        android:height="@dimen/buttonHeight"
+        android:width="@dimen/wideButtonWidth"
+        android:src="@android:drawable/ic_media_next"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
