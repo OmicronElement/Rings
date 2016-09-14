@@ -17,13 +17,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TableLayout
+        <LinearLayout
             android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="15dp">
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
 
-            <GridLayout
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="232dp"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -32,9 +33,13 @@
                     android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
                     android:text="Player"
                     android:id="@+id/player"
-                    android:layout_centerHorizontal="true"
                     android:layout_gravity="left|center_vertical"
-                    android:textSize="25dp" />
+                    android:textSize="55dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="@android:color/holo_blue_bright"
+                    android:textIsSelectable="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -44,19 +49,22 @@
                     android:id="@+id/score"
                     android:textSize="85dp"
                     android:layout_span="2"
-                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_alignParentTop="false"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_gravity="center" />
-            </GridLayout>
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
 
             <ListView
-                android:layout_width="wrap_content"
+                android:layout_width="232dp"
                 android:layout_height="match_parent"
                 android:id="@+id/scoresListView"
                 android:headerDividersEnabled="true" />
 
-        </TableLayout>
+        </LinearLayout>
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -212,17 +220,9 @@
 
         </TableLayout>
 
-        <RelativeLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:weightSum="1">
-
-        </RelativeLayout>
-
     </LinearLayout>
 
-    <ImageButton
+    <Button
         android:layout_width="@dimen/wideButtonWidth"
         android:layout_height="wrap_content"
         android:text="Undo"
@@ -230,13 +230,13 @@
         android:textSize="@dimen/buttonTextSize"
         android:height="@dimen/buttonHeight"
         android:width="@dimen/wideButtonWidth"
-        android:src="@android:drawable/ic_menu_revert"
         android:adjustViewBounds="true"
         android:cropToPadding="false"
         android:scaleType="fitCenter"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:contentDescription="Undo" />
 
     <ImageButton
         android:layout_width="@dimen/wideButtonWidth"
@@ -252,6 +252,7 @@
         android:layout_marginBottom="65dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:contentDescription="Next" />
 
 </RelativeLayout>
